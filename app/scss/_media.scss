@@ -1,0 +1,93 @@
+/* 1________________________________________ fronzy media-queries */
+/* 1.1_____________________ def vars */
+$xsdef: 600px; // don`t change this var. You can change -> main vars <- like -> $xs <-
+$lgdef: 1200px; //don`t change this var. You can change -> main vars <- like -> $lg <-
+/* btm def vars */
+/* 1.2_____________________ main vars */
+$xs: $xsdef; // can change. Like this -> $xs: 500px; or $xs: 720px; or $xs: any count; !But count must be < $lg
+$lg: 800px; // can change Like this -> $lg: 1000px; or $lg: 1300px; !But count must be > $xs
+/* btm main vars */
+/* 1.3_____________________ def mixins */
+@mixin fronzy($bp) {
+  @if $bp == "xs" {
+    @media screen and (max-width: $xs) {
+      @content;
+    }
+  }
+
+  @else if $bp == "mdleft" {
+    @media screen and (max-width: ($lg - 1)) {
+      @content;
+    }
+  }
+
+  @else if $bp == "md" {
+    @media (min-width: ($xs + 1)) and (max-width: ($lg - 1)) {
+      @content;
+    }
+  }
+  
+  @else if $bp == "mdright" {
+    @media screen and (min-width: ($xs + 1)) {
+      @content;
+    }
+  }
+  
+  @else if $bp == "lg" {
+    @media screen and (min-width: $lg) {
+      @content;
+    }
+  }
+}
+ 
+@mixin fronzymin($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin fronzymax($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin fronzyfromto($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+/* btm def mixins */
+/* 1.4_____________________ user mixins */
+/* You can add your own mixins like this: 
+//
+@mixin fronzyiphone4() {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+//
+Add your mixin before -> btm user mixins <- string
+*/
+@mixin fronzyiphone4() {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+/* btm user mixins */
+/* btm fronzy media-queries. Created by Anre La http://fb.com/myanrela */
+
+// $xs: 600px; //эта переменная обозначает устройства с шириной экрана менее 600px
+// $lg: 1000px; //эта переменная обозначает устройства с шириной экрана более 1000px
+
+// @include fronzy(xs) { ... } // для экранов, которые равны либо меньше 600px
+// @include fronzy(md) { ... } // для экранов, которые больше 601px и меньше 999px
+// @include fronzy(lg) { ... } // для экранов, которые равны либо больше 1000px
+// @include fronzymin(700px) { ... } // для экранов, которые больше 700px (можно указывать любое значение)
+// @include fronzymax(1200px) { ... } // для экранов менее 1200px
+// @include fronzyfromto(300px, 500px) { ... } // для экранов от 300px до 500px
+
+// /* также можно создавать свои миксины. Способ создания своих миксинов опишу в конце статьи. */
+// /* медиа-запрос для iPhone4 выглядит так: */
+// @include fronzyiphone4() { ... } // данный код после конвертации будет выглядеть так: @media screen and (max-width: 320px) { ... } 
+// /* 320 px - ширина экрана iphone4 */

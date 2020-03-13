@@ -1,0 +1,241 @@
+.choice {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    @include fronzymax(500px) {
+        height: auto; 
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1230px;
+        margin: 0 auto;
+        padding: 80px 21px 30px 20px;
+        @include fronzymax(1000px) {
+            flex-direction: column;
+            padding: 50px 20px 10px 20px;
+        }
+        @include fronzymax(450px) {
+            padding: 5px 0 0 0;
+        }
+    }
+
+    &__hamburger {
+        margin-bottom: 30px;
+        @include fronzymax(1000px) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.choise-hamburger {
+    @include fronzymax(1000px) {
+        left: 5px;
+    }  
+}
+
+
+.choice--active.choice {
+    &::before {
+        z-index: 3;
+        opacity: 1;
+    }
+}
+
+.choise-hamburger--active {
+    .choise-hamburger__line:nth-child(1) {
+        transform:rotate(45deg) translate(4px, 3px);
+    }
+    .choise-hamburger__line:nth-child(3) {
+        transform:rotate(-45deg) translate(4px, -3px);
+    }
+    .choise-hamburger__line:nth-child(2) {
+        transform:translateX(-50px);
+    }
+}
+
+.choice-content {
+    margin-top: 50px;
+    width: 26%;
+    @include fronzymax(1000px) {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__hamburger {
+        margin-top: -35px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: -0.015em;
+        margin-bottom: 20px;
+        @include fronzymax(1000px) {
+            font-size: 28px;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        @include fronzymax(400px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    p {
+        line-height: 130.42%;
+    }
+}
+
+.choise-form {
+    width: 70%;
+    padding: 40px 150px 47px 60px;
+    background-color: #FCF9F0;
+    border-radius: 18px;
+    background-image: url(../img/bg/buckwheat.png);
+    background-repeat: no-repeat;
+    background-size: 28%;
+    background-position: 100% 100%;
+    @include fronzymax(1000px) {
+        width: 100%;
+        padding: 25px 70px 30px 40px;
+    }
+    @include fronzymax(600px) {
+        padding: 10px 10px 20px 10px;
+    }
+
+    @include fronzymax(450px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include fronzymax(350px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.form-rlevance, .form-time {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &__subtitle {
+    font-size: 12px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    label {
+        font-weight: bold;
+        @include fronzymax(600px) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.form-time {
+    margin-bottom: 30px;
+    @include fronzymax(600px) {
+        margin-bottom: 20px;
+    }
+}
+
+.form-contacts {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    @include fronzymax(600px) {
+        margin-bottom: 20px;;
+    }
+    @include fronzymax(560px) {
+        flex-direction: column;
+    }
+}
+
+.form-checkbox {
+    margin-bottom: 32px;
+    @include fronzymax(850px) {
+        margin-bottom: 20px;
+    }
+    @include fronzymax(600px) {
+        margin-bottom: 15px;
+    }
+    &__title {
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        @include fronzymax(1000px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .checkbox {
+        @include fronzymax(1000px) {
+            width: 48%;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.form-name, .form-tel {
+    &__title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 222px;
+        padding: 10px 5px;
+        border: 1px solid #BBBBBB;
+        border-radius: 6px;
+        @include fronzymax(560px) {
+            width: 70%;
+        }
+    }
+}
+
+.form-name {
+    margin-right: 28px;
+    @include fronzymax(560px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-logo {
+    background-color: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    &:hover {
+        svg {
+            path {
+                fill: #4d36f3;
+                transition: 0.7s;
+            }
+        }
+    }
+}
+
+.choice__inner {
+    margin: auto;
+    width: 100%;
+}
+.choice__wrap {
+    width: 100%;
+}
+
+
+.irs-line {
+    height: 3px;
+    background: #b6cf70;
+}
